@@ -31,20 +31,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-      
-  #驱动配置信息 
+  
+  #数据库驱动配置信息 
   datasource:
-  #sqlserver数据源
-  #  url: jdbc:sqlserver://localhost:52409;DatabaseName=sino_test
-  #  driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  #  username: saoa  
-  #  password: saoa123456
-    
-    url: jdbc:mysql://localhost:3306/sino_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong 
-    driverClassName : com.mysql.jdbc.Driver
-    username: root  
-    password: root
-    
     #指定启动连接池时，初始建立的连接数量
     initial-size: 1  
     #指定必须保持连接的最小值
@@ -69,7 +58,7 @@ spring:
     pool-prepared-statements: false  
     max-pool-prepared-statement-per-connection-size: 20  
     filters: stat,wall,log4j,config
-    
+
 #mybatis
 mybatis:
   #实体类位置
@@ -77,12 +66,12 @@ mybatis:
   mapper-locations: classpath*:mapper/**.xml
   base-package: com.dongx.initialization.mapper
       
-    #mapper
-#    mapper:
-#      #mapper.java位置
-#      mappers: com.dongx.initialization.mapper
-#      not-empty: false
-#      identity: MYSQL
+  #mapper
+mapper:
+  #mapper.java位置
+  mappers: com.dongx.initialization.mapper
+  not-empty: false
+  identity: MYSQL
     
 #pagehelper
 pagehelper:

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-<context id="testTables">
+<context id="Mysql" defaultModelType="flat">
     <property name="beginningDelimiter" value="`"/>
     <property name="endingDelimiter" value="`"/>
     <property name="javaFileEncoding" value="UTF-8"/>
@@ -25,10 +25,12 @@
         <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
     </commentGenerator>-->
 
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+    
     <commentGenerator>  
         <!--是否去除自动生成的注释 true：是 ： false:否  -->
-        <property name="suppressAllComments" value="true" />  
-        <property name="suppressDate" value="false" />  
+        <property name="suppressAllComments" value="false" />  
+        <property name="suppressDate" value="true" />  
     </commentGenerator> 
 
     <!--MySql数据库连接的信息：驱动类、连接地址、用户名、密码 -->
@@ -39,12 +41,15 @@
     </jdbcConnection>
 
     <!-- Oracle 数据库连接的信息 -->
-    <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"   
-        userId="yycg" password="yycg"> </jdbcConnection> -->
+    <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+                        connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"   
+                        userId="yycg" 
+                        password="yycg"> 
+        </jdbcConnection> -->
 
     <!-- 默认false，把jdbc decimal 和 numeric 类型解析为 Integer，为 true时把jdbc decimal 和 numeric 类型解析为java.math.BigDecimal -->
     <javaTypeResolver>
-        <property name="forceBigDecimals" value="false" />
+        <property name="forceBigDecimals" value="true" />
     </javaTypeResolver>
 
     <!-- targetProject:生成PO实体类的位置 -->
@@ -69,8 +74,8 @@
     </javaClientGenerator>
 
     <!-- 指定数据库表 -->
-    <table tableName="gu_demo" domainObjectName="Demo2" enableCountByExample="false"
-           enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" />
+    <table tableName="gu_demo" domainObjectName="Demo3" enableCountByExample="false"
+           enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"/>
 </context>
 </generatorConfiguration>  
 
