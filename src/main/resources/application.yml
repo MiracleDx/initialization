@@ -98,6 +98,9 @@ pagehelper:
 logging:
   #设置输出文件
   file: logs/Dongx.log
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss
+    
   
 
 
