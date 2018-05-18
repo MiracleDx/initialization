@@ -26,15 +26,17 @@ public class HelloController {
 	@RequestMapping("/")
 	public String index(ModelMap map) {
 		// 加入一个属性 用于在模板中读取
-		map.addAttribute("host", "Dongx");
+		map.addAttribute("host", "别让你的梦想，没了梦只剩下想");
 		return "index";
 	}
 
 	@RequestMapping("/hello")
-	public Integer insert(ModelMap map) {
-		Demo2 demo2 = new Demo2();
-		demo2.setName("111");
-		demo2.setAge(111);
-		return demo2Service.insert(demo2);
+	public String hello() {
+		return "hello";
+	}
+
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
 	}
 }

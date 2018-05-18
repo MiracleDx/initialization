@@ -58,7 +58,21 @@ spring:
     pool-prepared-statements: false  
     max-pool-prepared-statement-per-connection-size: 20  
     filters: stat,wall,log4j,config
+  
+  # 配置redis缓存
+  redis:
+    host: localhost
+    port: 6379
+    
+  #彩色输出日志
+  output:
+    ansi:
+      enabled: DETECT
+ 
+#日志输出级别为debug
+debug: false
 
+     
 #mybatis
 mybatis:
   #实体类位置
@@ -66,7 +80,7 @@ mybatis:
   mapper-locations: classpath*:mapper/**.xml
   base-package: com.dongx.initialization.mapper
       
-  #mapper
+#mapper
 mapper:
   #mapper.java位置
   mappers: com.dongx.initialization.mapper
@@ -79,5 +93,12 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countsql
+
+#日志
+logging:
+  #设置输出文件
+  file: logs/Dongx.log
+  
+
 
 

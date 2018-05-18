@@ -25,12 +25,12 @@
 
 		<!-- MyBatis Generator -->
 		<!-- Java接口和实体类 -->
-		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
+		<!--<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
 		<targetMapperPackage>com.dongx.initialization.mapper</targetMapperPackage>
-		<targetModelPackage>com.dongx.initialization.entity</targetModelPackage>
+		<targetModelPackage>com.dongx.initialization.entity</targetModelPackage>-->
 		<!-- XML生成路径 -->
-		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
-		<targetXMLPackage>mapper</targetXMLPackage>
+		<!--<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+		<targetXMLPackage>mapper</targetXMLPackage>-->
 
 		<!--依赖版本统一配置-->
 		<!--<mapper.version>3.5.0</mapper.version>
@@ -180,6 +180,25 @@
 			<version>2.3.1.RELEASE</version>
 		</dependency>
 		
+		<!--引入cache-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<!--引入log4j-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j</artifactId>
+			<version>1.3.8.RELEASE</version>
+		</dependency>
+
+		<!--引入aop-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
