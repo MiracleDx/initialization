@@ -40,18 +40,19 @@ public class WebLogAspectConfig {
 		HttpServletRequest request = attributes.getRequest();
 
 		// 记录下请求内容
-		log.info("Request--------->");
-		log.info("URL : " + request.getRequestURL().toString());
-		log.info("HTTP_METHOD : " + request.getMethod());
-		log.info("IP : " + request.getRemoteAddr());
-		log.info("CLASS_METHOD : " +  joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-		log.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+		log.info("服务器接收到请求");
+		log.info("请求<->URL : " + request.getRequestURL().toString());
+		log.info("请求<->HTTP_METHOD : " + request.getMethod());
+		log.info("请求<->IP : " + request.getRemoteAddr());
+		log.info("请求<->CLASS_METHOD : " +  joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+		log.info("请求<->ARGS : " + Arrays.toString(joinPoint.getArgs()));
 	}
 
 	@AfterReturning(returning = "ret", pointcut = "webLog()")
 	public void doAfterReturning(Object ret) throws Throwable {
 		// 处理完请求，返回内容
-		log.info("RESPONSE : " + ret);
-		log.info("SPEND TIME : {} 毫秒", (System.currentTimeMillis() - startTime.get()));
+		log.info("服务器开始响应");
+		log.info("服务器响应<->RESPONSE : " + ret);
+		log.info("服务器响应<->SPEND TIME : {} 毫秒", (System.currentTimeMillis() - startTime.get()));
 	}
 }
