@@ -1,6 +1,7 @@
 package com.dongx.initialization.sys;
 
 import com.alibaba.druid.util.StringUtils;
+import com.dongx.initialization.common.ResponseCode;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -63,7 +64,7 @@ public class GlobalExceptionHandler {
 	public ServerResponse<String> jsonErrorHandler(HttpServletRequest request, Exception e) throws Exception {
 		ServerResponse<String> sr = new ServerResponse<>();
 		sr.setMessage(e.getMessage());
-		sr.setCode(ServerResponse.FAILED);
+		sr.setCode(ResponseCode.ERROR.getCode());
 		sr.setData("error");
 		sr.setUrl(request.getRequestURL().toString());
 		return sr;

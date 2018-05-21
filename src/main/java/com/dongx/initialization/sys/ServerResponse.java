@@ -1,5 +1,6 @@
 package com.dongx.initialization.sys;
 
+import com.dongx.initialization.common.ResponseCode;
 import lombok.Data;
 
 /**
@@ -13,9 +14,6 @@ import lombok.Data;
 @Data
 public class ServerResponse<T> {
 	
-	public static final Integer SUCCESS = 0;
-	public static final Integer FAILED = 1;
-	
 	private Integer code;
 	
 	private String message;
@@ -24,4 +22,55 @@ public class ServerResponse<T> {
 	
 	private T data;
 	
+	public ServerResponse() {
+		
+	}
+	
+	private ServerResponse(Integer Code)  {
+		this.code = code;
+	}
+	
+	private ServerResponse(Integer Code, String message) {
+		this.code = code;
+		this.message = message;
+	}
+	
+	private ServerResponse(Integer Code, T data) {
+		this.code = code;
+		this.data = data;
+	}
+	
+	private ServerResponse(Integer Code, String message, T data) {
+		this.code = code;
+		this.message = message;
+		this.data = data;
+	}
+	
+	public static <T> ServerResponse<T> createBySuccess() {
+		return new ServerResponse<>(ResponseCode.SUCCESS.getCode());	
+	}
+	
+	public static <T> ServerResponse<T> createBySuccess(String message) {
+		return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), message);
+	}
+
+	public static <T> ServerResponse<T> createBySuccess(T data) {
+		return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), data);
+	}
+	
+	public static <T> ServerResponse<T> createBySuccess(String message, T data) {
+		return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), message, data);
+	}
+
+	public static <T> ServerResponse<T> createbyError() {
+		return new ServerResponse<>(ResponseCode.ERROR.getCode());
+	}
+
+	public static <T> ServerResponse<T> createbyError(String message) {
+		return new ServerResponse<>(ResponseCode.ERROR.getCode(), message);
+	}
+
+	public static <T> ServerResponse<T> createbyError(String message, T data) {
+		return new ServerResponse<>(ResponseCode.ERROR.getCode(), message, data);
+	}
 }

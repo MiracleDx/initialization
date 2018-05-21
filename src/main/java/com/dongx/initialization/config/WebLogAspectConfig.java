@@ -52,6 +52,6 @@ public class WebLogAspectConfig {
 	public void doAfterReturning(Object ret) throws Throwable {
 		// 处理完请求，返回内容
 		log.info("RESPONSE : " + ret);
-		log.info("SPEND TIME : {} 毫秒" + (System.currentTimeMillis() - startTime.get()));
+		log.info("SPEND TIME : {} 毫秒", (System.currentTimeMillis() - startTime.get()));
 	}
 }
