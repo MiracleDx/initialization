@@ -21,8 +21,8 @@ public class GeneratorKeyUtilTest {
 	@Test
 	public void testKey()  {
 		GeneratorKeyUtil keyUtil = GeneratorKeyUtil.getInstance();
-		String result = keyUtil.getKey();
-		String result2 = keyUtil.getKey("dongx");
+		String result = keyUtil.generatorKey();
+		String result2 = keyUtil.generatorKey("dongx");
 		Assert.assertEquals(32, result.length());
 		Assert.assertEquals(32, result2.length());
 	}

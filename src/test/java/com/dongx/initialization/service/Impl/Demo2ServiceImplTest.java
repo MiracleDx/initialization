@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 public class Demo2ServiceImplTest {
 
 	@Resource
-	Demo2ServiceImpl demo2Service;
+	private Demo2ServiceImpl demo2Service;
 	
 	@Test
 	public void insert() {

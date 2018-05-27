@@ -2,6 +2,7 @@ package com.dongx.initialization.sys;
 
 import com.alibaba.druid.util.StringUtils;
 import com.dongx.initialization.common.ResponseCode;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;

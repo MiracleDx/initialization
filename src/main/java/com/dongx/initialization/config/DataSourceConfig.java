@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  */
 @ComponentScan
 @Configuration
-public class ApplicationConfig {
+public class DataSourceConfig {
 	
 	@Autowired
 	private Environment env;

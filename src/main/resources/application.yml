@@ -3,10 +3,11 @@ spring:
   profiles:
     active: dev
   
+
   #Thymeleaf的默认参数配置
   thymeleaf:
-    # Enable template caching. 关闭缓存即时刷新
-    cache: true
+    # Enable template caching. 关闭缓存即时刷新   修改后ctrl + shift + F9  刷新页面
+    cache: false
     # Check that the templates location exists.
     check-template-location: true
     # Enable MVC Thymeleaf view resolution.
@@ -31,6 +32,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+          hibernate:
+            format_sql: true
+    
   
   #数据库驱动配置信息 
   datasource:
