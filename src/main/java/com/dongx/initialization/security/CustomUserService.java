@@ -30,7 +30,7 @@ import java.util.List;
  * Modified by:
  */
 @Component
-public class CustomerUserService implements UserDetailsService {
+public class CustomUserService implements UserDetailsService {
 	
 	@Resource
 	private UserMapper userMapper;
