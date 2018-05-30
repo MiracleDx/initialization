@@ -30,7 +30,7 @@ public class GeneratorKeyUtil {
 	 * 生成32位随机数
 	 * @return
 	 */
-	protected String generatorKey() {
+	public String generatorKey() {
 		// 随机数生成器
 		SecureRandom random = new SecureRandom();
 		
@@ -86,7 +86,7 @@ public class GeneratorKeyUtil {
 	 * @param str
 	 * @return
 	 */
-	protected String generatorKey(String str) {
+	public String generatorKey(String str) {
 		int length = str.length();
 		String result = generatorKey();
 		result = result.substring(length, result.length());
